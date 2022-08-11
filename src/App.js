@@ -1,22 +1,27 @@
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "./App.css";
-import { volcanoIcon } from "./resources/Markers";
+import { useState, useEffect } from "react";
+import MapComponent from "./components/MapComponent";
+import LoaderComponent from "./components/LoaderComponent";
 
 function App() {
+  const [loading, setLoading] = useState([false]);
+  const [eventData, setEventData] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true);
+      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events");
+      const data = await res.json();
+      setEventData(data.events);
+      setLoading(false);
+    };
+    fetchEvents();
+  }, []);
+
   return (
-    <div>
-      <MapContainer
-        center={[41.948081, -7.7007248]}
-        zoom={4}
-        scrollWheelZoom={true}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[41.948081, -7.7007248]} icon={volcanoIcon} />
-      </MapContainer>
-    </div>
+    <>
+      {!loading ? <MapComponent eventData={eventData} /> : <LoaderComponent />}
+    </>
   );
 }
 
