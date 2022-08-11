@@ -1,6 +1,6 @@
 ## Application description
 
-This application will provide real world data fetched from EONET API.
+This application will provide real world data fetched from EONET API.  
 Custom markers and loader are made with CSS only.
 
 ### Tools
