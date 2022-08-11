@@ -3,10 +3,10 @@
 This application will provide real world data fetched from EONET API.
 Custom markers and loader are made with CSS only.
 
-#Tools
+### Tools
 
-React Leaflet.js
+React Leaflet.js  
 https://react-leaflet.js.org/
 
-EONET API
+EONET API  
 https://eonet.gsfc.nasa.gov/
