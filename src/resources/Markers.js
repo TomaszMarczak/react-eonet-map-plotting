@@ -14,7 +14,7 @@ const wildfire = renderToStaticMarkup(
 );
 const iceberg = renderToStaticMarkup(
   <div className="bluePin">
-    <i class="fa-solid fa-snowflake"></i>
+    <i className="fa-solid fa-snowflake"></i>
   </div>
 );
 

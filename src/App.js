@@ -2,10 +2,15 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import MapComponent from "./components/MapComponent";
 import LoaderComponent from "./components/LoaderComponent";
+import PanelComponent from "./components/PanelComponent";
 
 function App() {
   const [loading, setLoading] = useState([false]);
   const [eventData, setEventData] = useState([]);
+
+  const [checkedVolcanoes, setCheckedVolcanoes] = useState(true);
+  const [checkedWildfires, setCheckedWildfires] = useState(true);
+  const [checkedIcebergs, setCheckedIcebergs] = useState(true);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -20,7 +25,26 @@ function App() {
 
   return (
     <>
-      {!loading ? <MapComponent eventData={eventData} /> : <LoaderComponent />}
+      {!loading ? (
+        <PanelComponent
+          checkedIcebergs={checkedIcebergs}
+          checkedVolcanoes={checkedVolcanoes}
+          checkedWildfires={checkedWildfires}
+          setCheckedIcebergs={setCheckedIcebergs}
+          setCheckedVolcanoes={setCheckedVolcanoes}
+          setCheckedWildfires={setCheckedWildfires}
+        />
+      ) : null}
+      {!loading ? (
+        <MapComponent
+          eventData={eventData}
+          checkedIcebergs={checkedIcebergs}
+          checkedVolcanoes={checkedVolcanoes}
+          checkedWildfires={checkedWildfires}
+        />
+      ) : (
+        <LoaderComponent />
+      )}
     </>
   );
 }
