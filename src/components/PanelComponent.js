@@ -21,7 +21,8 @@ export default function PanelComponent({
               type="checkbox"
               variant="outline-primary"
               checked={checkedVolcanoes}
-              onClick={() => setCheckedVolcanoes(!checkedVolcanoes)}
+              value="volcanoes"
+              onChange={() => setCheckedVolcanoes(!checkedVolcanoes)}
             >
               Volcanoes
             </ToggleButton>
@@ -31,7 +32,8 @@ export default function PanelComponent({
               type="checkbox"
               variant="outline-primary"
               checked={checkedWildfires}
-              onClick={() => setCheckedWildfires(!checkedWildfires)}
+              value="wildfires"
+              onChange={() => setCheckedWildfires(!checkedWildfires)}
             >
               Wildfires
             </ToggleButton>
@@ -41,7 +43,8 @@ export default function PanelComponent({
               type="checkbox"
               variant="outline-primary"
               checked={checkedIcebergs}
-              onClick={() => setCheckedIcebergs(!checkedIcebergs)}
+              value="icebergs"
+              onChange={() => setCheckedIcebergs(!checkedIcebergs)}
             >
               Icebergs
             </ToggleButton>
