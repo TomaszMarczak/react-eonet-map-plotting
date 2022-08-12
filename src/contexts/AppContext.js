@@ -26,12 +26,6 @@ export const AppProvider = ({ children }) => {
     fetchEvents();
   }, []);
 
-  useEffect(() => {
-    console.log(`Volcanoes ${volcanoes.length}`);
-    console.log(`Wildfires ${wildfires.length}`);
-    console.log(`Icebers ${icebergs.length}`);
-  });
-
   const volcanoes = eventData
     .map((event) => {
       if (event.categories[0].id === "volcanoes") {
