@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-eonet-map-plotting/static/css/main.22b10509.css",
+    "main.js": "/react-eonet-map-plotting/static/js/main.8d111f7a.js",
+    "index.html": "/react-eonet-map-plotting/index.html",
+    "main.22b10509.css.map": "/react-eonet-map-plotting/static/css/main.22b10509.css.map",
+    "main.8d111f7a.js.map": "/react-eonet-map-plotting/static/js/main.8d111f7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22b10509.css",
+    "static/js/main.8d111f7a.js"
+  ]
+}
